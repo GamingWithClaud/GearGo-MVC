@@ -1,0 +1,24 @@
+@model GearGo.Models.Equipment
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<section class="detail-page content-width">
+    <a class="back-link" asp-controller="Equipment" asp-action="Index"><span aria-hidden="true">&larr;</span> All equipment</a>
+    <div class="detail-layout">
+        <div class="detail-photo">
+            <img src="@Model.ImageUrl" alt="@Model.Name" />
+        </div>
+        <div class="detail-copy">
+            <p class="eyebrow">@Model.Category</p>
+            <h1>@Model.Name</h1>
+            <p class="detail-description">@Model.Description</p>
+            <p class="detail-price">R @Model.DailyRate.ToString("0.00") <span>/ day</span></p>
+            <p class="availability detail-availability @(Model.IsAvailable ? "is-available" : "is-unavailable")">
+                <span></span>@(Model.IsAvailable ? "Available for your next trip" : "Currently unavailable")
+            </p>
+            <a class="button button-dark" asp-controller="Equipment" asp-action="Index">Keep exploring <span aria-hidden="true">&rarr;</span></a>
+        </div>
+    </div>
+</section>

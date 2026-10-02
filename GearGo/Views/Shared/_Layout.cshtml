@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GearGo</title>
+    <meta name="theme-color" content="#f5f6f2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Main navigation">
+            <a class="brand" asp-controller="Home" asp-action="Index" aria-label="GearGo home">
+                <span class="brand-mark" aria-hidden="true">G</span>
+                <span class="brand-name">gear<span>go</span></span>
+            </a>
+            <div class="nav-links">
+                <a asp-controller="Home" asp-action="Index">Home</a>>
+            </div>
+            <a class="nav-cta" asp-controller="Equipment" asp-action="Index">
+                Browse equipment <span aria-hidden="true">&rarr;</span>
+            </a>
+        </nav>
+    </header>
+    <main id="main-content" class="site-main">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-shell">
+            <a class="brand footer-brand" asp-controller="Home" asp-action="Index">
+                <span class="brand-mark" aria-hidden="true">G</span>
+                <span class="brand-name">gear<span>go</span></span>
+            </a>
+            <p>Good gear. Better days outside.</p>
+            <div class="footer-meta">
+                <span>&copy; 2026 GearGo</span>
+                <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
