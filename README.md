@@ -82,9 +82,14 @@ The team will use the following GitHub workflow:
 9. Resolve review comments.
 10. Merge the Pull Request into `main`.
 
-### Branch Naming Convention
+### Team Members
 
-Branches should use the following format:
+| Name | Role |
+| --- | --- |
+| Claud-James Blignaut | Administrator |
+| Marco Jacobus Janse van Rensburg | Administrator |
+| Pieter Johannes Jacob van Straten | Business Analyst |
+| Izak Van Heerden | Developer |
+| Tiaan Dewald Arpin | Business Analyst |
 
-```text
-feature/short-description
+
