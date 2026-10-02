@@ -1,0 +1,59 @@
+@model IEnumerable<GearGo.Models.Equipment>
+
+@{
+    ViewData["Title"] = "Equipment";
+}
+
+<section class="catalog-page content-width" aria-labelledby="catalog-title">
+    <div class="catalog-heading">
+        <p class="eyebrow">The GearGo collection</p>
+        <h1 id="catalog-title">Find your kind<br class="desktop-break" /> of outside.</h1>
+        <p class="catalog-lede">Thoughtful gear for trail days, camp nights, and everything in between.</p>
+    </div>
+
+    @if (Model.Any())
+    {
+        <div class="catalog-toolbar">
+            <span>@Model.Count() pieces of gear</span>
+            <span>Rental rates shown per day</span>
+        </div>
+        <div class="product-grid">
+            @foreach (var equipment in Model)
+            {
+                <article class="product-card">
+                    <a class="product-photo" asp-controller="Equipment" asp-action="Details" asp-route-id="@equipment.Id" aria-label="View @equipment.Name">
+                        <img src="@equipment.ImageUrl" alt="@equipment.Name" loading="lazy" />
+                        <span class="category-label">@equipment.Category</span>
+                    </a>
+                    <div class="product-info">
+                        <div class="product-title-row">
+                            <h2>@equipment.Name</h2>
+                            <span class="availability @(equipment.IsAvailable ? "is-available" : "is-unavailable")">
+                                <span></span>@(equipment.IsAvailable ? "Available" : "Unavailable")
+                            </span>
+                        </div>
+                        <p class="product-description">@equipment.Description</p>
+                        <div class="product-bottom">
+                            <p class="product-price">R @equipment.DailyRate.ToString("0.00") <span>/ day</span></p>
+                            <a class="product-link" asp-controller="Equipment" asp-action="Details" asp-route-id="@equipment.Id" aria-label="View details for @equipment.Name">
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="empty-catalog">
+            <div class="empty-copy">
+                <p class="eyebrow">A little quiet before the next adventure</p>
+                <h2>The gear wall is getting ready.</h2>
+                <p>Our collection will show up here as soon as it's ready. In the meantime, the outdoors is waiting.</p>
+                <a class="button button-dark" asp-controller="Home" asp-action="Index">Back to GearGo <span aria-hidden="true">&rarr;</span></a>
+            </div>
+            <div class="empty-image" role="img" aria-label="Open mountain landscape"></div>
+        </div>
+    }
+</section>
