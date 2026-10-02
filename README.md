@@ -117,67 +117,6 @@ The GearGo MVC application will provide a small web-based system that allows:
 
 The first version will focus on the core rental process. It will not initially include online payments, delivery tracking, advanced reporting, external supplier integrations or a full commercial booking system.
 
-## User Roles
-
-### Customer
-
-A customer is a person who wants to rent equipment from GearGo.
-
-### Staff
-
-A staff member manages equipment and processes customer rental requests.
-
-### Manager
-
-A manager has administrative control over the equipment catalogue, users and business operations.
-
-## Use Cases
-
-### Customer Use Cases
-
-1. **Browse available equipment**
-   - The customer views equipment that is currently available for rental.
-
-2. **View equipment details**
-   - The customer views the name, description, category and availability of an item.
-
-3. **Submit a rental request**
-   - The customer selects equipment and submits a request for a specific rental period.
-
-4. **View rental request status**
-   - The customer checks whether a rental request is pending, approved or rejected.
-
-### Staff Use Cases
-
-1. **View equipment**
-   - Staff view the equipment catalogue and current availability.
-
-2. **Add equipment**
-   - Staff add new equipment to the GearGo catalogue.
-
-3. **Update equipment**
-   - Staff edit equipment details, availability or condition.
-
-4. **Review rental requests**
-   - Staff view rental requests submitted by customers.
-
-5. **Approve or reject rental requests**
-   - Staff process requests and update their status.
-
-### Manager Use Cases
-
-1. **Manage the equipment catalogue**
-   - The manager adds, edits, removes or deactivates equipment.
-
-2. **Manage users**
-   - The manager views users and manages their roles or access.
-
-3. **View rental activity**
-   - The manager reviews rental requests and equipment usage.
-
-4. **Monitor system information**
-   - The manager checks the overall status of equipment and rental activity.
-
 ### Team Members
 
 | Name | Role |
