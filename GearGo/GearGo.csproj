@@ -1,9 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TypeScriptTarget>ESNext</TypeScriptTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TypeScriptTarget>ESNext</TypeScriptTarget>
+  </PropertyGroup>
+
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <TypeScriptJSXEmit>none</TypeScriptJSXEmit>
   </PropertyGroup>
 
 </Project>
