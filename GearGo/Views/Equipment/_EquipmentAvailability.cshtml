@@ -1,0 +1,5 @@
+@model GearGo.Models.Equipment
+
+<span></span>@(Model.IsAvailable
+	? ViewData["AvailableText"] as string ?? "Available"
+	: ViewData["UnavailableText"] as string ?? "Unavailable")
