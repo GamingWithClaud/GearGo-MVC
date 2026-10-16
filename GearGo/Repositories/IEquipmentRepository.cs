@@ -4,7 +4,8 @@ namespace GearGo.Repositories
 {
     public interface IEquipmentRepository
     {
-        Task<IEnumerable<Equipment>> GetAllAsync();
+        public IEnumerable<Equipment> GetAllAsync();
+
         Task<Equipment?> GetByIdAsync(int id);
     }
 }

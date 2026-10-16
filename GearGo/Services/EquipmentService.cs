@@ -10,13 +10,13 @@ namespace GearGo.Services
         public IEnumerable<Equipment> GetAll()
         {
             // Keep the controller independent of how equipment is stored.
-            return repository.GetAll();
+            return repository.GetAllAsync();
         }
 
         public IEnumerable<Equipment> GetAvailable()
         {
             // Filter the repository results so callers receive only rentable items.
-            return repository.GetAll().Where(e => e.IsAvailable);
+            return repository.GetAllAsync().Where(e => e.IsAvailable);
         }
     }
 }

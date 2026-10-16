@@ -2,7 +2,7 @@ using GearGo.Models;
 
 namespace GearGo.Repositories
 {
-    public class EquipmentRepository
+    public class EquipmentRepository : IEquipmentRepository
     {
         // This list acts as the data source for the lab; a real app could load these from a database.
         private static readonly List<Equipment> _equipmentList =
@@ -39,10 +39,15 @@ namespace GearGo.Repositories
             }
         ];
 
-        public IEnumerable<Equipment> GetAll()
+        public IEnumerable<Equipment> GetAllAsync()
         {
             // Give callers the stored records without putting data-access details in the controller.
             return _equipmentList;
+        }
+
+        public Task<Equipment?> GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
