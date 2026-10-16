@@ -15,8 +15,10 @@
             <h1>@Model.Name</h1>
             <p class="detail-description">@Model.Description</p>
             <p class="detail-price">R @Model.DailyRate.ToString("0.00") <span>/ day</span></p>
+            @{ ViewData["AvailableText"] = "Available for your next trip"; }
+            @{ ViewData["UnavailableText"] = "Currently unavailable"; }
             <p class="availability detail-availability @(Model.IsAvailable ? "is-available" : "is-unavailable")">
-                <span></span>@(Model.IsAvailable ? "Available for your next trip" : "Currently unavailable")
+                <partial name="_EquipmentAvailability" model="Model" />
             </p>
             <a class="button button-dark" asp-controller="Equipment" asp-action="Index">Keep exploring <span aria-hidden="true">&rarr;</span></a>
         </div>

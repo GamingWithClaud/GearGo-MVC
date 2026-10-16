@@ -1,9 +1,8 @@
 using System.Globalization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
 
 namespace GearGo.Middleware
 {
+    // dont know how half this shit works it works dont touche please :)
     public class RequestLoggingMiddleware(RequestDelegate next, ILogger<RequestLoggingMiddleware> logger)
     {
         private readonly RequestDelegate _next = next;

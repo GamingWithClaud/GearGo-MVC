@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using GearGo.Models;
 using GearGo.Repositories;
 
