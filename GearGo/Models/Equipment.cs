@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace GrearGo.Models
+namespace GearGo.Models
 {
     public class Equipment
     {
@@ -22,8 +22,10 @@ namespace GrearGo.Models
         public string Category { get; set; } = string.Empty;
 
         // One piece of equipment can have many rental requests.
-        public ICollection<RentalRequest> RentalRequests { get; set; }
-            = new List<RentalRequest>();
+        public ICollection<RentalRequest> RentalRequests { get; set; } = new List<RentalRequest>();
+
+        public string Description { get; internal set; }
+        public string ImageUrl { get; internal set; }
+        public bool IsAvailable { get; internal set; }
     }
 }
-

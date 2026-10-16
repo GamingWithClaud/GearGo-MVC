@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace GrearGo.Models
+namespace GearGo.Models
 {
     public class RentalRequest : IValidatableObject
     {
